@@ -1,1 +1,283 @@
-return x-3 branch change branch 3
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+nothing to commit, working tree clean
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+nothing to commit, working tree clean
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (master)
+$ git push origin master
+Counting objects: 5, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (5/5), 529 bytes | 0 bytes/s, done.
+Total 5 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 1 local objects.
+To https://github.com/CG026914/026914.git
+   ee70774..03dd36a  master -> master
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (master)
+$ open newfileweb
+bash: open: command not found
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (master)
+$ newfileweb
+bash: newfileweb: command not found
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (master)
+$ git pull origin master
+remote: Counting objects: 2, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (2/2), done.
+From https://github.com/CG026914/026914
+ * branch            master     -> FETCH_HEAD
+   03dd36a..9eaabe5  master     -> origin/master
+Updating 03dd36a..9eaabe5
+Fast-forward
+ newfileweb => newfileweb.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename newfileweb => newfileweb.txt (100%)
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (master)
+$ git branch 026914b
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (master)
+$ ls
+filenew2  localignored.pyc  newfile.txt  newfileweb.txt  README.md
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (master)
+$ ls -al
+total 12
+drwxr-xr-x 1 CG026914 1049089  0 Sep  8 10:38 ./
+drwxr-xr-x 1 CG026914 1049089  0 Sep  8 10:02 ../
+drwxr-xr-x 1 CG026914 1049089  0 Sep  8 10:38 .git/
+-rw-r--r-- 1 CG026914 1049089  5 Sep  8 09:48 .gitignore
+-rw-r--r-- 1 CG026914 1049089  0 Sep  8 10:02 filenew2
+-rw-r--r-- 1 CG026914 1049089  0 Sep  8 09:47 localignored.pyc
+-rw-r--r-- 1 CG026914 1049089 10 Sep  8 10:32 newfile.txt
+-rw-r--r-- 1 CG026914 1049089 21 Sep  8 10:38 newfileweb.txt
+-rw-r--r-- 1 CG026914 1049089 18 Sep  8 10:02 README.md
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (master)
+$ git branch
+  026914b
+* master
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (master)
+$ git checkout 026914b
+Switched to branch '026914b'
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (026914b)
+$ git branch
+* 026914b
+  master
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (026914b)
+$
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (026914b)
+$ git status
+On branch 026914b
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   newfile.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (026914b)
+$ git branch
+* 026914b
+  master
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (026914b)
+$ git add -A
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (026914b)
+$ git status
+On branch 026914b
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   newfile.txt
+
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (026914b)
+$ git commit -m "fromBranch b"
+[026914b 6939989] fromBranch b
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (026914b)
+$ git push -u origin 026914b
+Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 292 bytes | 0 bytes/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local objects.
+To https://github.com/CG026914/026914.git
+ * [new branch]      026914b -> 026914b
+Branch 026914b set up to track remote branch 026914b from origin.
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (026914b)
+$ git branch -a
+* 026914b
+  master
+  remotes/origin/026914b
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (026914b)
+$ git checkout
+Your branch is up-to-date with 'origin/026914b'.
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (026914b)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (master)
+$ git pull origin master
+From https://github.com/CG026914/026914
+ * branch            master     -> FETCH_HEAD
+Already up-to-date.
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (master)
+$ git branch --merged
+* master
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (master)
+$ git merge 026914b
+Updating 9eaabe5..6939989
+Fast-forward
+ newfile.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (master)
+$ git push origin master
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/CG026914/026914.git
+   9eaabe5..6939989  master -> master
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (master)
+$ git branch --merged
+  026914b
+* master
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (master)
+$ git branch -d 026914b
+Deleted branch 026914b (was 6939989).
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (master)
+$ git branch -a
+* master
+  remotes/origin/026914b
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (master)
+$ git push origin --delete 026914b
+To https://github.com/CG026914/026914.git
+ - [deleted]         026914b
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (master)
+$ git branch -a
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (master)
+$ git branch 026914c
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (master)
+$ git checkout 026914c
+Switched to branch '026914c'
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (026914c)
+$ git status
+On branch 026914c
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   newfile.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (026914c)
+$ git add -A
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (026914c)
+$ git commit -m "a"
+[026914c c5cdb50] a
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (026914c)
+$ git push u origin 026914c
+fatal: 'u' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (026914c)
+$ git push -u origin 026914c
+Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 283 bytes | 0 bytes/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local objects.
+To https://github.com/CG026914/026914.git
+ * [new branch]      026914c -> 026914c
+Branch 026914c set up to track remote branch 026914c from origin.
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (026914c)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (master)
+$ git pull origin master
+From https://github.com/CG026914/026914
+ * branch            master     -> FETCH_HEAD
+Already up-to-date.
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (master)
+$ git merge 026914c
+Updating 6939989..c5cdb50
+Fast-forward
+ newfile.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (master)
+$ git push origin master
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/CG026914/026914.git
+   6939989..c5cdb50  master -> master
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (master)
+$ git branch -d 026914b
+error: branch '026914b' not found.
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (master)
+$ git branch -d 026914c
+Deleted branch 026914c (was c5cdb50).
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (master)
+$ git push origin --delete 026914c
+To https://github.com/CG026914/026914.git
+ - [deleted]         026914c
+
+CG026914@CERN-CG026914-1 MINGW64 /c/git/026914 (master)
+$
